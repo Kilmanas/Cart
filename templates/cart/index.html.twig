@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block body %}
+
+    <h1>Your Cart</h1>
+    {% if cart.items.count > 0 %}
+
+            <div class="col-md-8">
+            {{ form_start(form) }}
+            Items:
+            {% for item in form.items %}
+                <div class="row mt-4">
+                {{ item.vars.data.product.title }}
+                {{ form_widget(item.quantity) }} {{ form_widget(item.update) }}
+                {{ item.vars.data.product.price }} €
+                </div>
+            {% endfor %}
+            {{ form_end(form) }}
+            </div>
+            <div class="col-md-4">
+                Total:
+                {{ cart.total }} €
+            </div>
+
+    {% else %}
+            Your cart is empty.
+    {% endif %}
+{% endblock %}

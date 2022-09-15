@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <h1>Product Details</h1>
+            <ul><h2>{{ product.title }}</h2></ul>
+            <ul>{{ product.price }} €</ul>
+            <ul>{{ product.description }}</ul>
+            {{ form(form) }}
+    </div>
+
+{% endblock %}
