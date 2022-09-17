@@ -4,7 +4,7 @@ namespace App\Service;
 
 use App\Manager\CartManager;
 
-class CartItemsNumber
+class CartItemsService
 {
     private $cartManager;
 
@@ -18,5 +18,14 @@ class CartItemsNumber
         $cartItemsNumber = count($this->cartManager->getCurrentCart()->getItems());
 
         return $cartItemsNumber;
+    }
+
+    public function total(): float
+    {
+        $items = $this->cartManager->getCurrentCart()->getItems();
+        foreach ($items as $item) {
+            $total = $item->getTotal();
+        }
+        return $total;
     }
 }

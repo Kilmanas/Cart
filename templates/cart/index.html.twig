@@ -14,7 +14,7 @@
                 <div class="row mt-4">
                 {{ item.vars.data.product.title }}
                 {{ form_widget(item.quantity) }} {{ form_widget(item.update) }}
-                    {{ item.vars.data.product.price }}
+                    {{ items.total() }}
                 </div>
             {% endfor %}
             {{ form_end(form) }}
