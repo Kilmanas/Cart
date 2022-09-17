@@ -6,9 +6,16 @@ use App\Manager\CartManager;
 
 class CartItemsNumber
 {
-    public function number(CartManager $cartManager): string
+    private $cartManager;
+
+    public function __construct(CartManager $cartManager)
     {
-        $cartItemsNumber = strval(count($cartManager->getCurrentCart()->getItems()));
+        $this->cartManager = $cartManager;
+    }
+
+    public function number(): string
+    {
+        $cartItemsNumber = count($this->cartManager->getCurrentCart()->getItems());
 
         return $cartItemsNumber;
     }

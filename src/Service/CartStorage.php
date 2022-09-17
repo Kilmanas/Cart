@@ -6,7 +6,7 @@ use App\Entity\Cart;
 use App\Repository\CartRepository;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class cartStorage
+class CartStorage
 {
     private $requestStack;
 

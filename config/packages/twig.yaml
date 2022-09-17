@@ -1,4 +1,4 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
     globals:
-#            items: '@App\Service\CartItemsNumber'
+            items: '@App\Service\CartItemsNumber'

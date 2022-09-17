@@ -3,7 +3,7 @@
 namespace App\Manager;
 
 use App\Entity\Cart;
-use App\Service\cartStorage;
+use App\Service\CartStorage;
 use Doctrine\ORM\EntityManagerInterface;
 
 class CartManager

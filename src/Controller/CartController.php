@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CartController extends AbstractController
 {
     #[Route('/cart', name: 'cart')]
-    public function index(CartManager $cartManager, Request $request): Response
+    public function cart(CartManager $cartManager, Request $request): Response
     {
         $cart = $cartManager->getCurrentCart();
         $form = $this->createForm(CartType::class, $cart);

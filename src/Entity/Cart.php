@@ -93,18 +93,6 @@ class Cart
         return $this;
     }
 
-    public function getTotal(): float
-    {
-        $total = 0;
-
-        foreach ($this->getItems() as $item) {
-
-            $total += $item->getTotal();
-        }
-
-        return $total;
-    }
-
     public function removeItems(): self
     {
         foreach ($this->getItems() as $item) {
